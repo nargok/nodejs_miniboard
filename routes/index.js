@@ -60,7 +60,7 @@ router.get('/:page', (req, res, next) => {
 router.post('/', (req, res, next) => {
   var rec = {
     message: req.body.msg,
-    user_id: req.sessions.login.id
+    user_id: req.session.login.id
   }
   new Message(rec).save().then((model) => {
     res.redirect('/');
