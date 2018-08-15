@@ -24,7 +24,6 @@ var Message = Bookshelf.Model.extend({
   }
 });
 
-/* GET home page. */
 router.get('/', (req, res, next) => {
   if (req.session.login == null) {
     res.redirect('/users');
