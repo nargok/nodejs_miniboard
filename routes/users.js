@@ -83,7 +83,7 @@ router.post('/', (req, res, next) => {
       var nm = req.body.name;
       var pw = req.body.password;
       User.query({where: {name: nm}, andWhere: {password: pw}})
-        .fetcn()
+        .fetch()
         .then((model) => {
           if (model == null) {
             var data = {
@@ -97,9 +97,9 @@ router.post('/', (req, res, next) => {
             var data = {
               title: 'Users/Login',
               content: '<p>ログインしました！<br>トップページに戻ってメッセージを送信ください</p>',
-              from: req.body
+              form: req.body
             };
-            response.render('uses/login', data);
+            response.render('users/login', data);
           }
         });
     }
