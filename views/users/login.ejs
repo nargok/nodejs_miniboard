@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
   <title><%= title %></title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
@@ -11,7 +10,7 @@
   </head>
   <div role="main">
     <p><%- content %></p>
-    <form action="/users/add" method="post">
+    <form action="/users" method="post">
       <table>
         <tr>
           <th>NAME</th>
@@ -22,15 +21,15 @@
           <td><input type="password" name="password" value="<%= form.password %>"></td>
         </tr>
         <tr>
-          <th>COMMENT</th>
-          <td><textarea name="comment"><%= form.comment %></textarea></td>
-        </tr>
-        <tr>
           <th></th>
-          <td><input type="submit" value="作成"></td>
+          <td><input type="submit" value="ログイン"></td>
         </tr>
       </table>
     </form>
+    <p>
+      <a href="/">&lt;&lt; Topへ戻る</a> |
+      <a href="/users/add">アカウントの作成&gt;&gt;</a>    
+    </p>
   </div>
 </body>
 </html>
